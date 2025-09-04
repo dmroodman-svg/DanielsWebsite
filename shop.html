@@ -7,38 +7,74 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: #121212;
+            color: #f5f5f5;
+            margin: 0;
             padding: 20px;
         }
 
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
         nav a {
-            margin-right: 15px;
             text-decoration: none;
-            color: blue;
+            color: #0d6efd;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #084298;
         }
 
         h1 {
             text-align: center;
+            margin-bottom: 20px;
         }
 
         #searchBar {
             width: 100%;
-            padding: 10px;
-            margin: 20px 0;
+            max-width: 500px;
+            padding: 12px;
+            margin: 20px auto;
+            display: block;
             font-size: 16px;
+            border-radius: 8px;
+            border: none;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            color: #0d6efd;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
         }
 
         .item {
-            display: inline-block;
-            width: 200px;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
+            background: #1f1f1f;
+            padding: 15px;
             border-radius: 10px;
             text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+            background: #0d6efd;
+            color: #fff;
         }
     </style>
 </head>
@@ -55,25 +91,34 @@
     <!-- LEDs Section -->
     <div class="section" id="LEDs">
         <h2>LEDs</h2>
-        <div class="item">Red LED</div>
-        <div class="item">Green LED</div>
-        <div class="item">Blue LED</div>
+        <div class="items-grid">
+            <div class="item">Red LED</div>
+            <div class="item">Green LED</div>
+            <div class="item">Blue LED</div>
+            <div class="item">RGB LED</div>
+        </div>
     </div>
 
     <!-- Circuits Section -->
     <div class="section" id="Circuits">
         <h2>Circuits</h2>
-        <div class="item">Resistor Pack</div>
-        <div class="item">Capacitor Pack</div>
-        <div class="item">Transistor Pack</div>
+        <div class="items-grid">
+            <div class="item">Resistor Pack</div>
+            <div class="item">Capacitor Pack</div>
+            <div class="item">Transistor Pack</div>
+            <div class="item">Microcontroller Board</div>
+        </div>
     </div>
 
     <!-- Materials Section -->
     <div class="section" id="Materials">
         <h2>Materials</h2>
-        <div class="item">Breadboard</div>
-        <div class="item">Jumper Wires</div>
-        <div class="item">Soldering Kit</div>
+        <div class="items-grid">
+            <div class="item">Breadboard</div>
+            <div class="item">Jumper Wires</div>
+            <div class="item">Soldering Kit</div>
+            <div class="item">Multimeter</div>
+        </div>
     </div>
 
     <script>
@@ -84,7 +129,7 @@
             for (let i = 0; i < items.length; i++) {
                 let itemName = items[i].innerText.toLowerCase();
                 if (itemName.includes(input)) {
-                    items[i].style.display = "inline-block";
+                    items[i].style.display = "block";
                 } else {
                     items[i].style.display = "none";
                 }
@@ -93,3 +138,4 @@
     </script>
 </body>
 </html>
+

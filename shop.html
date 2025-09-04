@@ -1,35 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop</title>
-  <style>
-    body {font-family: Arial, sans-serif; margin:0; background:#0f172a; color:white;}
-    header {background:#1e293b; padding:20px; text-align:center;}
-    nav {background:#334155; text-align:center; padding:10px;}
-    nav a {color:#facc15; margin:0 15px; text-decoration:none; font-weight:bold;}
-    section {padding:40px; max-width:900px; margin:auto;}
-    footer {background:#1e293b; text-align:center; padding:20px; margin-top:30px;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Electronics Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: blue;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #searchBar {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .item {
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+    </nav>
+
     <h1>Shop</h1>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-    <a href="shop.html">Shop</a>
-  </nav>
-  <section>
-    <h2>Welcome to the Shop!</h2>
-    <p>Here you can browse electronics, LEDs, and building materials.</p>
-  </section>
-  <footer>
-    <p>⚡ Built by Daniel Roodman ⚡</p>
-  </footer>
+
+    <input type="text" id="searchBar" placeholder="Search for items..." onkeyup="filterItems()">
+
+    <!-- LEDs Section -->
+    <div class="section" id="LEDs">
+        <h2>LEDs</h2>
+        <div class="item">Red LED</div>
+        <div class="item">Green LED</div>
+        <div class="item">Blue LED</div>
+    </div>
+
+    <!-- Circuits Section -->
+    <div class="section" id="Circuits">
+        <h2>Circuits</h2>
+        <div class="item">Resistor Pack</div>
+        <div class="item">Capacitor Pack</div>
+        <div class="item">Transistor Pack</div>
+    </div>
+
+    <!-- Materials Section -->
+    <div class="section" id="Materials">
+        <h2>Materials</h2>
+        <div class="item">Breadboard</div>
+        <div class="item">Jumper Wires</div>
+        <div class="item">Soldering Kit</div>
+    </div>
+
+    <script>
+        function filterItems() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let items = document.getElementsByClassName('item');
+
+            for (let i = 0; i < items.length; i++) {
+                let itemName = items[i].innerText.toLowerCase();
+                if (itemName.includes(input)) {
+                    items[i].style.display = "inline-block";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>

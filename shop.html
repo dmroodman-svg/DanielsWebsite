@@ -34,6 +34,12 @@
       margin:10px 0;
       border-radius:8px;
     }
+
+    h3 {
+      margin-top: 30px;
+      border-bottom: 2px solid #facc15;
+      padding-bottom: 5px;
+    }
   </style>
 </head>
 <body>
@@ -49,21 +55,56 @@
   </nav>
   <section>
     <h2>Welcome to the Shop!</h2>
-    <p>Here you can browse electronics, LEDs, and building materials.</p>
+    <p>Here you can browse everything you need to start your journey as an electrical engineer.</p>
 
     <!-- Search bar -->
     <div class="search-container">
       <input type="text" id="searchBar" placeholder="Search items...">
     </div>
 
-    <!-- Example items -->
+    <!-- Tools -->
+    <h3>🛠 Tools & Equipment</h3>
     <div id="shopItems">
+      <div class="shop-item">Soldering Iron Kit</div>
+      <div class="shop-item">Multimeter</div>
+      <div class="shop-item">Oscilloscope</div>
+      <div class="shop-item">Wire Stripper</div>
+      <div class="shop-item">Safety Goggles</div>
+    </div>
+
+    <!-- Electronic Components -->
+    <h3>🔌 Electronic Components</h3>
+    <div id="shopItems">
+      <div class="shop-item">Resistor Pack</div>
+      <div class="shop-item">Capacitor Pack</div>
+      <div class="shop-item">Transistors</div>
+      <div class="shop-item">Diodes</div>
       <div class="shop-item">LED Strip Light</div>
       <div class="shop-item">Arduino Board</div>
-      <div class="shop-item">Resistor Pack</div>
-      <div class="shop-item">Soldering Iron</div>
-      <div class="shop-item">Building Material - Wood</div>
-      <div class="shop-item">Building Material - Metal</div>
+      <div class="shop-item">Raspberry Pi</div>
+      <div class="shop-item">Breadboard</div>
+      <div class="shop-item">Jumper Wires</div>
+    </div>
+
+    <!-- Materials -->
+    <h3>📐 Building Materials</h3>
+    <div id="shopItems">
+      <div class="shop-item">Copper Wire Roll</div>
+      <div class="shop-item">Heat Shrink Tubes</div>
+      <div class="shop-item">Soldering Wire</div>
+      <div class="shop-item">PVC Plastic Sheets</div>
+      <div class="shop-item">Metal Sheets</div>
+      <div class="shop-item">Wood Boards</div>
+    </div>
+
+    <!-- Coding -->
+    <h3>💻 Coding & Development</h3>
+    <div id="shopItems">
+      <div class="shop-item">Python Programming Book</div>
+      <div class="shop-item">C++ Programming Book</div>
+      <div class="shop-item">HTML & Web Development Book</div>
+      <div class="shop-item">Arduino IDE Software</div>
+      <div class="shop-item">Raspberry Pi OS</div>
     </div>
   </section>
   <footer>
@@ -73,7 +114,7 @@
   <script>
     // Search functionality
     const searchBar = document.getElementById("searchBar");
-    const shopItems = document.getElementById("shopItems").getElementsByClassName("shop-item");
+    const shopItems = document.getElementsByClassName("shop-item");
 
     searchBar.addEventListener("keyup", function() {
       const filter = searchBar.value.toLowerCase();

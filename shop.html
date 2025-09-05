@@ -12,27 +12,20 @@
     section {padding:40px; max-width:900px; margin:auto;}
     footer {background:#1e293b; text-align:center; padding:20px; margin-top:30px;}
 
-    /* Search bar styling */
-    .search-container {
-      margin: 20px 0;
-      text-align: center;
-    }
-    #searchBar {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      font-size: 16px;
-    }
-
-    /* Shop items */
+    /* Item styling */
     .shop-item {
       background:#1e293b;
       padding:15px;
       margin:10px 0;
       border-radius:8px;
+      text-decoration: none;
+      color:white;
+      display:block;
+      transition:0.2s;
+    }
+    .shop-item:hover {
+      background:#475569;
+      cursor:pointer;
     }
 
     h3 {
@@ -55,75 +48,47 @@
   </nav>
   <section>
     <h2>Welcome to the Shop!</h2>
-    <p>Here you can browse everything you need to start your journey as an electrical engineer.</p>
-
-    <!-- Search bar -->
-    <div class="search-container">
-      <input type="text" id="searchBar" placeholder="Search items...">
-    </div>
+    <p>Click an item below to view details and buy it.</p>
 
     <!-- Tools -->
     <h3>🛠 Tools & Equipment</h3>
-    <div id="shopItems">
-      <div class="shop-item">Soldering Iron Kit</div>
-      <div class="shop-item">Multimeter</div>
-      <div class="shop-item">Oscilloscope</div>
-      <div class="shop-item">Wire Stripper</div>
-      <div class="shop-item">Safety Goggles</div>
-    </div>
+    <a href="soldering-iron.html" class="shop-item">Soldering Iron Kit</a>
+    <a href="multimeter.html" class="shop-item">Multimeter</a>
+    <a href="oscilloscope.html" class="shop-item">Oscilloscope</a>
+    <a href="wire-stripper.html" class="shop-item">Wire Stripper</a>
+    <a href="safety-goggles.html" class="shop-item">Safety Goggles</a>
 
     <!-- Electronic Components -->
     <h3>🔌 Electronic Components</h3>
-    <div id="shopItems">
-      <div class="shop-item">Resistor Pack</div>
-      <div class="shop-item">Capacitor Pack</div>
-      <div class="shop-item">Transistors</div>
-      <div class="shop-item">Diodes</div>
-      <div class="shop-item">LED Strip Light</div>
-      <div class="shop-item">Arduino Board</div>
-      <div class="shop-item">Raspberry Pi</div>
-      <div class="shop-item">Breadboard</div>
-      <div class="shop-item">Jumper Wires</div>
-    </div>
+    <a href="resistor-pack.html" class="shop-item">Resistor Pack</a>
+    <a href="capacitor-pack.html" class="shop-item">Capacitor Pack</a>
+    <a href="transistors.html" class="shop-item">Transistors</a>
+    <a href="diodes.html" class="shop-item">Diodes</a>
+    <a href="led-strip.html" class="shop-item">LED Strip Light</a>
+    <a href="arduino.html" class="shop-item">Arduino Board</a>
+    <a href="raspberry-pi.html" class="shop-item">Raspberry Pi</a>
+    <a href="breadboard.html" class="shop-item">Breadboard</a>
+    <a href="jumper-wires.html" class="shop-item">Jumper Wires</a>
 
     <!-- Materials -->
     <h3>📐 Building Materials</h3>
-    <div id="shopItems">
-      <div class="shop-item">Copper Wire Roll</div>
-      <div class="shop-item">Heat Shrink Tubes</div>
-      <div class="shop-item">Soldering Wire</div>
-      <div class="shop-item">PVC Plastic Sheets</div>
-      <div class="shop-item">Metal Sheets</div>
-      <div class="shop-item">Wood Boards</div>
-    </div>
+    <a href="copper-wire.html" class="shop-item">Copper Wire Roll</a>
+    <a href="heat-shrink.html" class="shop-item">Heat Shrink Tubes</a>
+    <a href="solder-wire.html" class="shop-item">Soldering Wire</a>
+    <a href="pvc-sheets.html" class="shop-item">PVC Plastic Sheets</a>
+    <a href="metal-sheets.html" class="shop-item">Metal Sheets</a>
+    <a href="wood-boards.html" class="shop-item">Wood Boards</a>
 
     <!-- Coding -->
     <h3>💻 Coding & Development</h3>
-    <div id="shopItems">
-      <div class="shop-item">Python Programming Book</div>
-      <div class="shop-item">C++ Programming Book</div>
-      <div class="shop-item">HTML & Web Development Book</div>
-      <div class="shop-item">Arduino IDE Software</div>
-      <div class="shop-item">Raspberry Pi OS</div>
-    </div>
+    <a href="python-book.html" class="shop-item">Python Programming Book</a>
+    <a href="cpp-book.html" class="shop-item">C++ Programming Book</a>
+    <a href="html-book.html" class="shop-item">HTML & Web Development Book</a>
+    <a href="arduino-ide.html" class="shop-item">Arduino IDE Software</a>
+    <a href="raspberry-os.html" class="shop-item">Raspberry Pi OS</a>
   </section>
   <footer>
     <p>⚡ Built by Daniel Roodman ⚡</p>
   </footer>
-
-  <script>
-    // Search functionality
-    const searchBar = document.getElementById("searchBar");
-    const shopItems = document.getElementsByClassName("shop-item");
-
-    searchBar.addEventListener("keyup", function() {
-      const filter = searchBar.value.toLowerCase();
-      for (let i = 0; i < shopItems.length; i++) {
-        let item = shopItems[i];
-        let text = item.textContent.toLowerCase();
-        item.style.display = text.includes(filter) ? "" : "none";
-      }
-    });
-  </script>
 </body>
 </html>

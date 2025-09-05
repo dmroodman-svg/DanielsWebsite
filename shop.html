@@ -11,6 +11,29 @@
     nav a {color:#facc15; margin:0 15px; text-decoration:none; font-weight:bold;}
     section {padding:40px; max-width:900px; margin:auto;}
     footer {background:#1e293b; text-align:center; padding:20px; margin-top:30px;}
+
+    /* Search bar styling */
+    .search-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    #searchBar {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    /* Shop items */
+    .shop-item {
+      background:#1e293b;
+      padding:15px;
+      margin:10px 0;
+      border-radius:8px;
+    }
   </style>
 </head>
 <body>
@@ -27,9 +50,40 @@
   <section>
     <h2>Welcome to the Shop!</h2>
     <p>Here you can browse electronics, LEDs, and building materials.</p>
+
+    <!-- Search bar -->
+    <div class="search-container">
+      <input type="text" id="searchBar" placeholder="Search items...">
+    </div>
+
+    <!-- Example items -->
+    <div id="shopItems">
+      <div class="shop-item">LED Strip Light</div>
+      <div class="shop-item">Arduino Board</div>
+      <div class="shop-item">Resistor Pack</div>
+      <div class="shop-item">Soldering Iron</div>
+      <div class="shop-item">Building Material - Wood</div>
+      <div class="shop-item">Building Material - Metal</div>
+    </div>
   </section>
   <footer>
     <p>⚡ Built by Daniel Roodman ⚡</p>
   </footer>
+
+  <script>
+    // Search functionality
+    const searchBar = document.getElementById("searchBar");
+    const shopItems = document.getElementById("shopItems").getElementsByClassName("shop-item");
+
+    searchBar.addEventListener("keyup", function() {
+      const filter = searchBar.value.toLowerCase();
+      for (let i = 0; i < shopItems.length; i++) {
+        let item = shopItems[i];
+        let text = item.textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? "" : "none";
+      }
+    });
+  </script>
 </body>
 </html>
+
